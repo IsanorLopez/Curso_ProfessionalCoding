@@ -1,0 +1,54 @@
+body {
+  background: url(assets/img/fondo.jpg);
+  background-size: cover;
+}
+p {
+  color: aqua;
+  font-size: 35px;
+  background-color: white;
+}
+/* id de título */
+#titulo-principal {
+  color: rgb(25, 161, 252);
+}
+/*Este es un comentario*/
+/*CLASES*/
+.clase-li {
+  color: red;
+}
+.clase-li-2 {
+  font-size: 25px;
+  font-weight: bold;
+}
+.clase-p {
+  color: goldenrod;
+}
+.clase-titulo {
+  font-size: 100px;
+  color: green;
+  background-color: #c5c50c;
+}
+
+/*ID's*/
+#lista-del-super {
+  background-color: blue;
+  color: white;
+}
+#elemento1 {
+  font-size: 45px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+#parrafo2 {
+  color: gray;
+}
+#imagen1 {
+  height: 250px;
+}
+.clase-anidada {
+  background-color: orange;
+}
+/*Selectores Avanzados*/
+.clase-div .clase-ul .clase-anidada {
+  background-color: rgb(11, 203, 233);
+}
