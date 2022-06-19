@@ -4,70 +4,275 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./img/logo.jpg">
-    <title>CV Personal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Document</title>
 </head>
 <body>
     
-    <header>
+    <div class="container">
 
-        <img src="img/logo.jpg" alt="logotipo" width="200" height="100">
+        <header>
 
-        <nav>
-            <ul>
-                <li><a href="index.html" target="_blank">HOME</a></li>
-                <li><a href="https://www.w3schools.com/TAgs/default.asp" target="_blank">Etiquetas HTML</a></li>
-                <li><a href="#Lenguajes" >Lenguajes</a></li>
-                <li><a href="#BasesDeDatos">Base de datos</a></li>
-            </ul>
-        </nav>
+            <nav class="menu">
+                <a href="index.html" target="_blank">HOME</a>
+                <a href="https://www.w3schools.com/TAgs/default.asp" target="_blank">Etiquetas HTML</a>
+                <a href="#Tecnologias" >Manejo de tecnologias</a>
+                <a href="#Hobbies">Hobbies</a>
+            </nav>
 
-    </header>
+        </header>
+
+        <main>
+
+            <div class="contenedorSubStitulo">
+            
+                <div class="subtitulo">
+                    <h2>Datos Generales</h2>
+                </div>
     
-    <main>
-        <h1>CV: Isanor Lopez</h1>
-        <p>
-            Como desarrollador profesional llevo escasos 3 a&#241;os laborando en coppel, he desarrollado opciones nuevas
-            asi como tambien me ha tocado modificar opciones pre-existentes, actualmente estoy modificando un proyecto 
-            echo con el framework de angular version1(js).  
-            <br>
-            Me gusta la programacion en general, y siento una considerable atraccion acerca del desarrollo movil de 
-            aplicaciones, la programacion web como tal tambien me apasiona y me parece que los frameworks y tecnologias
-            actuales son de suma importancia y desde luego relevancia para un mercado en constante cambio.  
-        </p>
-    </main>
+            </div>
+
+            <div class="contenedorTarjetasHorizontal">
+
+                <div class="tarjeta" id="DatosGenerales">
+                
+                    <p>nombre: Isanor Alejandro Lopez Molina</p>
+
+                    <p>Fec. Nac: 06 de septiembre de 1996</p>
+
+                    <p>Direccion: Ejido el Tajito calle 18 de oct. #108 </p>
+
+                    <p>numTelefono: 8771477</p>
+
+                    <p>nombre: Isanor Alejandro Lopez Molina</p>
+
+                </div>
+
+                <div class="tarjeta" id="Educacion">
+                
+                    <div id="contenidoEducacion">
+
+                        <img src="img/ITSG_LOGO_OFFICIAL.png" alt="logotipo" id="logoEducacion">
+
+                        <div>
+
+                            <p>Carrera: Ingenieria en sistemas computacionales</p>
+
+                            <p>Generacion: 2014-2018 </p>
+
+                            <p>Especialidad: Administracion de Base de datos </p>
+
+                            <p>Merito: Primer lugar a nivel nacional en ENEIT 2018 </p>
+
+                            <p>Actual puesto: Desarrollador para empresas coppel</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
 
-    <h2>Tecnologias de desarrollo: </h2>
+            <div class="contenedorSubStitulo">
+            
+                <div class="subtitulo">
+                    <h2>Breve descripcion</h2>
+                </div>
+    
+            </div>
 
-    <section id="Lenguajes">
+            <div class="tarjeta" id="Descripcion">
 
-        En cuanto a los lenguajes en los cuales me ha tocado trabajar mayormente son los siguientes ordenados en funcion
-        de las necesidades: 
+                <p>
+                    Como desarrollador profesional llevo 3 a&#241;os laborando en coppel, 
+                    he desarrollado opciones nuevas asi como tambien me ha tocado modificar opciones pre-existentes, 
+                    actualmente estoy modificando un proyecto echo con el framework de angular version1(js).
+                </p>
+                   
+                <p>
+                  Me gusta la programacion en general, y siento una considerable atraccion acerca del desarrollo movil de 
+                  aplicaciones, la programacion web como tal tambien me apasiona, me parece que los frameworks y tecnologias
+                  actuales son de suma importancia, relevantes para un mercado en constante cambio.
+                </p>
 
-        <ol>
-            <li>C#</li>
-            <li>C++</li>
-            <li>TypeScript</li>
-            <li>JavaScript</li>
-        </ol>
 
-    </section>
+            </div>
 
-    <section id="BasesDeDatos">
+            <div class="contenedorSubStitulo">
+            
+                <div class="subtitulo">
+                    <h2 id="Tecnologias">Manejo de tecnologias</h2>
+                </div>
+    
+            </div>
 
-        <ol>
-            <li>SQL</li>
-            <li>MySQL</li>
-            <li>PostgreSQl</li>
-        </ol>
+            <div class="contenedorTarjetasHorizontal" >
+                
+                <div class="tarjetaEspecial">
+                    <div class="imgBx">
+                        <img src="img/prog.png">
+                    </div>
 
-    </section>
+                    <div class="contenidoTarjetaEspecial">
+                        
+                        <h3>C++</h3>
+                        
+                        <p>
+                            Es un lenguaje de programación diseñado en 1979 por Bjarne Stroustrup. 
+                            La intención de su creación fue extender al lenguaje de programación C mecanismos que permiten la manipulación de objetos. 
+                            En ese sentido, desde el punto de vista de los lenguajes orientados a objetos, C++ es un lenguaje híbrido
+                        </p>
 
-    <footer>
-        <p>Curriculum vitae	&#174;</p>
-    </footer>
+                    </div>
+                </div>
+
+                <div class="tarjetaEspecial">
+                    <div class="imgBx">
+                        <img src="img/prog.png">
+                    </div>
+
+                    <div class="contenidoTarjetaEspecial">
+                        
+                        <h3>C#</h3>
+                        
+                        <p>
+                            Lenguaje de programación multiparadigma desarrollado y estandarizado por la empresa Microsoft como parte de su plataforma .NET, 
+                            que después fue aprobado como un estándar por la ECMA e ISO. C# es uno de los lenguajes de programación diseñados para 
+                            la infraestructura de lenguaje común.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="tarjetaEspecial">
+                    <div class="imgBx">
+                        <img src="img/prog.png">
+                    </div>
+
+                    <div class="contenidoTarjetaEspecial">
+                        
+                        <h3>TypeScript</h3>
+                        
+                        <p>
+                            TypeScript es un lenguaje de programación libre y de código abierto desarrollado y mantenido por Microsoft.
+                             Es un superconjunto de JavaScript, que esencialmente añade tipos estáticos y objetos basados en clases.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="tarjetaEspecial">
+                    <div class="imgBx">
+                        <img src="img/prog.png">
+                    </div>
+
+                    <div class="contenidoTarjetaEspecial">
+                        
+                        <h3>SQL</h3>
+                        
+                        <p>
+                            SQL es un lenguaje de dominio específico, diseñado para administrar,
+                            y recuperar información de sistemas de gestión de bases de datos relacionales.​
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="contenedorSubStitulo">
+            
+                <div class="subtitulo">
+                    <h2 id="Hobbies">Hobbies</h2>
+                </div>
+    
+            </div>
+
+            <div class="contenedorTarjetasHorizontal" >
+                
+                <div class="tarjetaEspecial">
+                    <div class="imgBx">
+                        <img src="img/hobbi.png">
+                    </div>
+
+                    <div class="contenidoTarjetaEspecial">
+                        
+                        <h3>Autodidacta</h3>
+                        
+                        <p>
+                            Me gusta mantener mis habilidades como desarrollador vigentes y busco mantener la rutina de aprener nuevas tecnologias.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="tarjetaEspecial">
+                    <div class="imgBx">
+                        <img src="img/hobbi.png">
+                    </div>
+
+                    <div class="contenidoTarjetaEspecial">
+                        
+                        <h3>Correr</h3>
+                        
+                        <p>
+                            De manera contidiana realizo la actividad de correr, aprovechando las areas verdes que tengo a mi alrededor
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="tarjetaEspecial">
+                    <div class="imgBx">
+                        <img src="img/hobbi.png">
+                    </div>
+
+                    <div class="contenidoTarjetaEspecial">
+                        
+                        <h3>Peleas de Box</h3>
+                        
+                        <p>
+                            Para nada lo practico pero me gustan las peleas de box, esto desde que estaba niño en compa&#241;ia de mis abuelos
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="tarjetaEspecial">
+                    <div class="imgBx">
+                        <img src="img/hobbi.png">
+                    </div>
+
+                    <div class="contenidoTarjetaEspecial">
+                        
+                        <h3>Ingles</h3>
+                        
+                        <p>
+                            Me encuentro actualmente tomando un curso para el manejo del idioma, hasta este punto me ecuentro certificado en el 
+                            nivel A2.  
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </main>
+
+        <footer>
+            <div class="pieDePagina">
+                <p>Curriculum vitae	&#174;</p>
+            </div>
+        </footer>
+
+    </div>
 
 </body>
 </html>
-
