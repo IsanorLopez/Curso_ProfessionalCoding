@@ -26,9 +26,15 @@ a:hover {
     color: red;
 }
 
+.flexColumnCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .menu {
     height: 60px;
-    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     background: black;
     padding-top: 15px;
@@ -38,21 +44,17 @@ a:hover {
 
 
 .pieDePagina {
-    display: flex;
-    justify-content: center;
-    background: black;
     height: 60px;
+    flex-direction: row;
+    background: black;
 }
 
 .pieDePagina p {
-    color: white;
     margin-top: 30px;
+    color: white;
 }
 
 .subtitulo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background: rgb(126, 126, 126);
     border-radius: 5px;
     height: 50px;
@@ -60,19 +62,16 @@ a:hover {
 }
 
 .contenedorSubStitulo {
-    display: flex;
-    justify-content: center;
+    flex-direction: row;
 }
 
 .contenedorTarjetasHorizontal {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 1.2% 0px;
 }
 
 .tarjeta {
-    margin: 1.2% 0px;
     background: white;
     border-radius: 15px;
     padding: 10px 10px;
@@ -148,11 +147,14 @@ a:hover {
 }
 /* =================================== */
 
+#contenedorDescripcion {
+    flex-direction: row;
+    margin: 20px;
+}
+
 #Descripcion {
     width: 100%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+    height: 180px;
     justify-content: space-between;
 }
 
@@ -168,8 +170,6 @@ a:hover {
 #DatosGenerales {
     width: 30%;
     margin: 20px;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -179,14 +179,12 @@ a:hover {
 }
 
 #Educacion #contenidoEducacion {
-    display: flex;
+    justify-content: left;
     flex-direction: row;
     background: transparent;
 }
 
 #Educacion #contenidoEducacion div{
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     background: transparent;
     margin-left: 15px;
