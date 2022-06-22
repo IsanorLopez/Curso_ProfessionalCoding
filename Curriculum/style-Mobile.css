@@ -1,0 +1,151 @@
+* {
+    font-size: 15px;
+}
+
+.menu {
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+    background: black;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.contenedorSubStitulo {
+    flex-direction: row;
+}
+
+.contenedorTarjetasHorizontal {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.2% 0px;
+}
+
+.tarjeta {
+    background: white;
+    border-radius: 15px;
+    padding: 10px 10px;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .5);
+}
+/* ======TARJETA ESPECIAL======= */
+.tarjetaEspecial {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 15px;
+    background: #000;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .5);
+}
+
+.tarjetaEspecial .imgBx {
+    width: 100%;
+    height: 100%;
+}
+
+.tarjetaEspecial .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.tarjetaEspecial:hover .imgBx img {
+    opacity: 0;
+}
+
+.tarjetaEspecial .contenidoTarjetaEspecial {
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    width: 80%;
+    height: 60px;
+    background: #fff;
+    padding: 15px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.tarjetaEspecial:hover .contenidoTarjetaEspecial {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.tarjetaEspecial .contenidoTarjetaEspecial h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+}
+
+.tarjetaEspecial .contenidoTarjetaEspecial p {
+    margin: 10px 0 0;
+    padding: 0;
+    opacity: 0;
+    line-height: 1.2em;
+    transition: 0.5s;
+    text-align: justify;
+    font-size: 0.8rem;
+}
+
+.tarjetaEspecial:hover .contenidoTarjetaEspecial p {
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+/* =================================== */
+
+#ContenedorDatosGenerales {
+    margin: 0.6rem;
+}
+
+#contenedorDescripcion {
+    flex-direction: row;
+    margin: 0.6rem;
+}
+
+#Descripcion {
+    width: 100%;
+    justify-content: space-between;
+}
+
+#Programacion {
+    width: 50%;
+}
+
+#BaseDeDatos {
+    width: 50%;
+}
+
+#DatosGenerales {
+    font-size: 0.8rem;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#Educacion {
+    width: 100%;
+    margin: 20px;
+}
+
+#Educacion #contenidoEducacion {
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+}
+
+#Educacion #contenidoEducacion div{
+    justify-content: space-between;
+    background: transparent;
+    margin-left: 15px;
+}
+
+#logoEducacion {
+    height: 35%;
+    width:  25%;
+    border-radius: 15px;
+}

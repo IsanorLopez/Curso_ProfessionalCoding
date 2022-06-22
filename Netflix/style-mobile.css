@@ -1,0 +1,28 @@
+#menu-left-big{
+    display: none;
+}
+
+#menu-left-small{
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    margin: .5rem 0 0 0;
+    background-color: transparent;
+    padding: 0 1rem;
+}
+#menu-left-small a {
+    margin-left: 1rem;
+}
+
+@media (max-width: 1000px) {
+    #ninos{
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    #search{
+        display: none;
+    }
+}
+
