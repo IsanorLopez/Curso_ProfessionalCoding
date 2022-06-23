@@ -16,8 +16,13 @@
     <title>Netflix</title>
 </head>
 <body>
-    
+
     <header>
+
+        <div id="contenedorVideo">
+            <video src="img/trailer.mp4" muted autoplay loop id="videoBanner"></video>
+        </div>
+
         <nav id="navegacion">
             <div id="contenidoNavegacion">
                 
@@ -48,42 +53,43 @@
                     <img src="img/search.png" class="margin-left logoBarra" id="search">
                     <a href="#" class="margin-left" id="ninos">Ni&#241;os</a>
                     <img src="img/notification.png" class="margin-left logoBarra">
-                    <img src="img/user.png" class="margin-left logoBarra">
+                    <img src="img/usario.png" class="margin-left logoBarra" id="logoUsuario">
                     <img src="img/down.png" class="margin-left" id="logo-down">
                 </div>
                 
             </div>
 
-            <div id="ContenedorInformacion">
-                <div id="ContenedorInfo">
-                    
-                    <p id="titulo"> Stranger things</p>
-                    
-                    <p id="sinopsis"> 
-                        La historia arranca durante la década de los 80, en el pueblo ficticio de Hawkins,
-                        Indiana, cuando un niño llamado Will Byers desaparece misteriosamente, 
-                        hecho que destapa los extraños sucesos que tienen lugar en la zona,
-                        producto de una serie de experimentos que realiza el gobierno en un laboratorio científico cercano.
-                    </p>
+        </nav>
 
-                    <div id="botonesPrincipales">
-                       
-                        <div id="btnReproducir">
-                            <img src="img/play-button.png" class="margin-left iconosBotones">
-                            <p class="textoBoton">Reproducir</p>
-                        </div>
+        <div id="ContenedorInformacion">
+            <div id="ContenedorInfo">
 
-                        <div id="btnMasInformacion">
-                            <img src="img/info.png" class="margin-left iconosBotones">
-                            <p class="textoBoton">Mas Informacion</p>
-                        </div>
+                <p id="titulo"> Stranger things</p>
 
+                <p id="sinopsis"> 
+                    La historia arranca durante la década de los 80, en el pueblo ficticio de Hawkins,
+                    Indiana, cuando un niño llamado Will Byers desaparece misteriosamente, 
+                    hecho que destapa los extraños sucesos que tienen lugar en la zona,
+                    producto de una serie de experimentos que realiza el gobierno en un laboratorio científico cercano.
+                </p>
+
+                <div id="botonesPrincipales">
+                   
+                    <div id="btnReproducir">
+                        <img src="img/play-button.png" class="margin-left iconosBotones">
+                        <p class="textoBoton">Reproducir</p>
+                    </div>
+
+                    <div id="btnMasInformacion">
+                        <img src="img/info.png" class="margin-left iconosBotones">
+                        <p class="textoBoton">Mas Informacion</p>
                     </div>
 
                 </div>
-            </div>
 
-        </nav>
+            </div>
+        </div>
+
     </header>
 
     <main id="contendorPeliculas">
@@ -114,6 +120,20 @@
         
         </div>
         
+        <div class="carrusel">
+
+            <p class="tituloCarrusel">Peliculas de terror de zombies</p>
+            
+            <div class="catalogo">
+                <img src="./img/ps11.png" alt="pelicula o serie" class="peliculaSerie">
+                <img src="./img/ps12.png" alt="pelicula o serie" class="peliculaSerie">
+                <img src="./img/ps13.png" alt="pelicula o serie" class="peliculaSerie">
+                <img src="./img/ps14.png" alt="pelicula o serie" class="peliculaSerie">
+            </div>
+        
+        </div>
+
     </main>
+
 </body>
 </html>

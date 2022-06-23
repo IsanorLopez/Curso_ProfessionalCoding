@@ -40,6 +40,10 @@
         display: none;
     }
 
+    #ContenedorInformacion {
+        top: 25rem;
+    }
+
     #ContenedorInfo{
         width: 100%;
     }
@@ -52,6 +56,10 @@
     #seccion2{
 
         margin: 1rem .5rem 0 0rem;
+    }
+
+    #titulo{
+        font-size: 2rem;
     }
 
     #botonesPrincipales{
