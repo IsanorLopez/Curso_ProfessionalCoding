@@ -16,96 +16,104 @@
     <title>Netflix</title>
 </head>
 <body>
-
+    
     <header>
         <nav id="navegacion">
+            <div id="contenidoNavegacion">
+                
+                <div id="seccion1">
 
-            <div>
+                    <div id="menu-left-big">
 
-                <video src="img/trailer.mp4" muted autoplay loop id="videoBanner"></video>
+                        <img src="img/logo-netflix.png" id="logo">
+                        <a href="#">Inicio</a>
+                        <a href="#">Series</a>
+                        <a href="#">Peliculas</a>
+                        <a href="#">Novedades populares</a>
+                        <a href="#">Mi lista</a>
 
+                    </div>
+
+                    <div id="menu-left-small">
+
+                        <img src="img/logo-netflix.png" id="logo">
+                        <a href="#">Explorar</a>
+                        <img src="img/down.png" class="margin-left" id="logo-down">
+
+                    </div>
+
+                </div>
+
+                <div id="seccion2">
+                    <img src="img/search.png" class="margin-left logoBarra" id="search">
+                    <a href="#" class="margin-left" id="ninos">Ni&#241;os</a>
+                    <img src="img/notification.png" class="margin-left logoBarra">
+                    <img src="img/user.png" class="margin-left logoBarra">
+                    <img src="img/down.png" class="margin-left" id="logo-down">
+                </div>
+                
             </div>
 
-            <div id="contenedorNavegacion">
-
-                <div id="contenidoNavegacion">
-                
-                    <div id="seccion1">
-    
-                        <div id="menu-left-big">
-    
-                            <img src="img/logo-netflix.png" id="logo">
-                            <a href="#">Inicio</a>
-                            <a href="#">Series</a>
-                            <a href="#">Peliculas</a>
-                            <a href="#">Novedades populares</a>
-                            <a href="#">Mi lista</a>
-    
-                        </div>
-    
-                        <div id="menu-left-small">
-    
-                            <img src="img/logo-netflix.png" id="logo">
-                            <a href="#">Explorar</a>
-                            <img src="img/down.png" class="margin-left" id="logo-down">
-    
-                        </div>
-    
-                    </div>
-    
-                    <div id="seccion2">
-                        <img src="img/search.png" class="margin-left" id="search">
-                        <a href="#" class="margin-left" id="ninos">Ni&#241;os</a>
-                        <img src="img/notification.png" class="margin-left">
-                        <img src="img/user.png" class="margin-left">
-                        <img src="img/down.png" class="margin-left" id="logo-down">
-                    </div>
+            <div id="ContenedorInformacion">
+                <div id="ContenedorInfo">
                     
+                    <p id="titulo"> Stranger things</p>
+                    
+                    <p id="sinopsis"> 
+                        La historia arranca durante la década de los 80, en el pueblo ficticio de Hawkins,
+                        Indiana, cuando un niño llamado Will Byers desaparece misteriosamente, 
+                        hecho que destapa los extraños sucesos que tienen lugar en la zona,
+                        producto de una serie de experimentos que realiza el gobierno en un laboratorio científico cercano.
+                    </p>
 
-                </div>
-                
-                <div id="ContenedorInformacion">
-                    <div id="ContenedorPromocion">
-                        
-                        <p id="titulo"> Stranger things</p>
-                        
-                        <p id="sinopsis"> 
-                            La historia arranca durante la década de los 80, en el pueblo ficticio de Hawkins,
-                            Indiana, cuando un niño llamado Will Byers desaparece misteriosamente, 
-                            hecho que destapa los extraños sucesos que tienen lugar en la zona,
-                            producto de una serie de experimentos que realiza el gobierno en un laboratorio científico cercano.
-                        </p>
-
-                        <div id="botonesPrincipales">
-                            <div id="btnReproducir">
-                                <div class="contenidoBoton">
-                                    <div>
-                                        <img src="img/play-button.png" class="margin-left iconosBotones">
-                                        <p>Reproducir</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id="btnMasInfo">
-                                <div class="contenidoBoton">
-                                    <div>
-                                        <img src="img/info.png" class="margin-left iconosBotones">
-                                        <p>Mas informacion</p>
-                                    </div>
-                                </div>
-                            </div>
+                    <div id="botonesPrincipales">
+                       
+                        <div id="btnReproducir">
+                            <img src="img/play-button.png" class="margin-left iconosBotones">
+                            <p class="textoBoton">Reproducir</p>
                         </div>
-                    </div>
-                </div>
-                
 
+                        <div id="btnMasInformacion">
+                            <img src="img/info.png" class="margin-left iconosBotones">
+                            <p class="textoBoton">Mas Informacion</p>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
 
         </nav>
-
-
-
     </header>
 
+    <main id="contendorPeliculas">
+
+        <div class="carrusel">
+
+            <p class="tituloCarrusel">Continuar viendo contendio</p>
+            
+            <div class="catalogo">
+                <img src="./img/ps1.png" alt="pelicula o serie" class="peliculaSerie" id="x">
+                <img src="./img/ps2.png" alt="pelicula o serie" class="peliculaSerie">
+                <img src="./img/ps3.png" alt="pelicula o serie" class="peliculaSerie">
+                <img src="./img/ps10.png" alt="pelicula o serie" class="peliculaSerie">
+            </div>
+        
+        </div>
+
+        <div class="carrusel">
+
+            <p class="tituloCarrusel">Mi lista</p>
+            
+            <div class="catalogo">
+                <img src="./img/ps4.png" alt="pelicula o serie" class="peliculaSerie">
+                <img src="./img/ps5.png" alt="pelicula o serie" class="peliculaSerie">
+                <img src="./img/ps6.png" alt="pelicula o serie" class="peliculaSerie">
+                <img src="./img/ps7.png" alt="pelicula o serie" class="peliculaSerie">
+            </div>
+        
+        </div>
+        
+    </main>
 </body>
 </html>

@@ -7,14 +7,17 @@
     background: black;
 }
 
-a, img, nav, div, span {
+a, img, nav, div, span, p {
     background: transparent;
 }
 
-a, p {
+a {
     text-decoration: none;
     color: rgb(255, 255, 255);
-    background-color: transparent;
+}
+
+header {
+    height: 100%;
 }
 
 body {
@@ -35,8 +38,6 @@ body {
     display: flex;
     flex-direction: row;
     height: 100%;
-    background: transparent;
-    margin-top: 1rem;
 }
 
 #seccion1{
@@ -49,22 +50,6 @@ body {
 
 }
 
- #contenedorNavegacion {
-    position: absolute;
-    z-index: 1; 
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 3rem;
-    background-color: transparent;
-}
-
-#videoBanner {
-    position: absolute;
-    z-index: 0;
-    width: 100%;
-}
-
 #seccion2{
     display: flex;
     width: 50%;
@@ -73,13 +58,81 @@ body {
     background-color: transparent;
 }
 
+
+#ContenedorInformacion {
+    position: absolute;
+    width: 100%;
+    padding-left: 3rem;
+    top: 15rem;
+}
+
+#ContenedorInfo{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#botonesPrincipales{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-top: 1rem;
+}
+
+#btnReproducir{
+
+    display: flex;
+    flex-direction: row;
+    border-radius: .3rem;
+    background-color: white;
+    width: 13rem;
+    margin-right: 1rem;
+}
+
+#btnMasInformacion{
+
+    display: flex;
+    flex-direction: row;
+    border-radius: .3rem;
+    background-color: gray;
+    width: 17rem;
+    margin-right: 1rem;
+}
+
+.iconosBotones {
+    margin: .5rem 1rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+.textoBoton{
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+}
+
+#titulo{
+    color: white;
+    font-size: 2rem;
+}
+
+#sinopsis {
+    margin-top: 2rem;
+    color: white;
+}
+
 #logo{
     height: 1.5rem;
     width: 80px;
 }
 
+
+.logoBarra{
+    height: 1.5rem;
+    width: 3rem;
+}
+
 #ninos {
-    margin-top: .5rem;
+    margin-top: .3rem;
 }
 
 #logo-down {
@@ -88,92 +141,48 @@ body {
     margin-top: 0rem;
 }
 
-#ContenedorInformacion {
-    display: flex;
-    background-color: transparent;
-    width: 100%;
-    margin-top: 15rem;
-    padding-left: 4rem;
-
-}
-
-#ContenedorPromocion {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-#titulo{
-    font-size: 3rem;
-}
-
-
-
-#botonesPrincipales {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    width: 100%;
-    margin-top: 1.5rem;
-}
-
-#btnReproducir{
-    height: 3.5rem;
-    border-radius: .3rem;
-    background-color: white;
-    width: 15rem;
-    margin-right: 1rem;
-}
-
-#btnMasInfo {
-    height: 3.5rem;
-    border-radius: .3rem;
-    background-color: gray;
-    width: 15rem;
-    margin-left: 1rem;
-}
-
-#btnReproducir :hover{
-    border-radius: .3rem;
-    background-color: whitesmoke
-}
-
-#btnMasInfo :hover {
-    border-radius: .3rem;
-    background-color: lightgray;
-}
-
-.contenidoBoton{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-}
-
-.contenidoBoton div{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-.contenidoBoton div p{
-    margin-top: .1rem;
-    margin-left: .5rem;
-    color: black;
-    font-weight: bold;
-    font-size: 115%;
-
-}
-
-.iconosBotones {
-    height: 2rem;
-    width: 2rem;
-}
-
 .margin-left {
     margin-left: 1rem;
 }
 
+
+#contendorPeliculas {
+    
+    position: absolute;
+    width: 100%;
+    top: 33rem;
+    display: flex;
+    flex-direction: column;
+    padding-left: 3rem;
+}
+
+
+.carrusel{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.tituloCarrusel{
+    font-size: 1.7rem;
+    color: white;
+}
+
+.catalogo{
+    display: flex;
+    flex-direction: row;
+    margin-top: .7rem;
+}
+
+.peliculaSerie{
+    border-radius: .3rem;
+    margin-right: .3rem;
+    width: 23%;
+    height: 10rem;
+}
+
+img:hover{
+    transform: scale(1.2);
+}
 

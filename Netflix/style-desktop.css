@@ -7,6 +7,10 @@
     padding: 0 1rem;
 }
 
+#logo-down {
+    margin-top: .5rem;
+}
+
 #menu-left-small{
     display: none;
 }
@@ -14,14 +18,3 @@
 #ninos #search{
     display: block;
 }
-
-#logo-down {
-    margin-top: .5rem;
-}
-
-#sinopsis {
-    margin-top: 3rem;
-    text-align: justify;
-    width: 50%;
-}
-
