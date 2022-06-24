@@ -1,0 +1,164 @@
+* {
+    margin:  0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: bold;
+    background: white;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
+
+#contenido {
+    display: flex;
+    flex-direction: column;
+}
+
+a, p, div, img{
+    text-decoration: none;
+    background: transparent;
+}
+
+#top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    height: 65px;
+    width: 100%;
+}
+
+#contenidoTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+}
+
+#logo {
+    height: 35px;
+    width: 35px;
+    border-radius: 25px;
+    margin: 7px 7px;
+}
+
+#logoMenu {
+    height: 20px;
+    width: 20px;
+    margin: 15px 7px;
+}
+
+#contenidoLogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+#logoGoogle {
+    height: 100px;
+    width: 300px;
+}
+
+#center {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    height: 839px;
+    width: 100%;
+}
+
+#input-search{
+    text-decoration: none;
+    border: none;
+    height: 35px;
+    width: 100%;
+}
+
+#busqueda {
+    position: absolute;
+    height: 300px;
+    width: 500px;
+    padding-left: 0rem;
+    top: 15rem;
+    left: 45rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+#InputBusqueda{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px;
+    background-color: transparent;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .5);
+
+}
+
+#Botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.boton {
+    height: 35px;
+    width: 40%;
+    margin: 0 8px;
+    border-radius: 10px;
+    border-color: lightgray;
+}
+
+button :hover{
+    transform: scale(1.2);
+}
+
+
+#bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(247, 244, 244);
+    height: 80px;
+    width: 100%;
+}
+
+#mexico {
+    margin-top: 3.5px;
+    margin-left: 15px;
+}
+
+#linea{
+    width: 100%;
+    background-color: gray;
+    height: .5px;
+}
+
+#filaOpciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.opciones{
+    color: gray;
+}
+
+#filaOpciones a{
+    margin-right: 15px;
+}
+
+.margin-right{
+    margin-right: 10px;
+}
+
+.margin-top{
+    margin-top: 15px;
+}
