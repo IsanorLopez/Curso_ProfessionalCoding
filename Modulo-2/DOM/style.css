@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    flex-direction: column;
+}
+
+.formulario{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom{
+    margin-bottom: 10px;
+    height: 30px;
+}
+
+.error{
+    color: blue;
+    margin-top: -10px;
+}
+
+.errorBtn{
+    color: red;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+    
+}
