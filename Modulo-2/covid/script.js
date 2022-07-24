@@ -6,25 +6,32 @@ let sintomas = {
     Temperatura: 0
 }
 
-function convertirBool(sRespuesta) {
-    if (sRespuesta == 'SI') {
-        return true;
-    } else {
-        return false;
+let probabilidad;
+
+const form = document.getElementById('frmCaptura');
+const resultado = document.getElementById('resultado');
+
+form.addEventListener('submit', (evento) =>{
+    evento.preventDefault()
+
+    sintomas.dolorDeCabeza      = document.getElementById('rbtnDolorCabeza').checked;
+    sintomas.dificultadRespirar = document.getElementById('rbtnDificultadRespirar').checked;
+    sintomas.dolorDeCuerpo      = document.getElementById('rbtnDolorCuerpo').checked;
+    sintomas.todasLasVacunas    = document.getElementById('rbtnVacunasAplicadas').checked;
+    sintomas.Temperatura        = Number(document.getElementById('tbTemperatura').value);
+
+    if (sintomas.dolorDeCabeza && sintomas.dificultadRespirar && sintomas.Temperatura < 37 && sintomas.todasLasVacunas) {
+        probabilidad = 30;
+    } else if (sintomas.dolorDeCabeza && sintomas.dificultadRespirar && sintomas.Temperatura > 37 && sintomas.todasLasVacunas) {
+        probabilidad = 40;
+    }else if (sintomas.dolorDeCabeza && sintomas.dificultadRespirar && sintomas.dolorDeCuerpo && sintomas.Temperatura < 37 && sintomas.todasLasVacunas) {
+        probabilidad = 35;
+    } else if (sintomas.dolorDeCabeza && sintomas.dificultadRespirar && sintomas.dolorDeCuerpo && sintomas.Temperatura > 37 && sintomas.todasLasVacunas) {
+        probabilidad = 60;
+    } else if (sintomas.dolorDeCabeza && sintomas.dificultadRespirar && sintomas.dolorDeCuerpo && sintomas.Temperatura > 37 && !sintomas.todasLasVacunas) {
+        probabilidad = 100;
     }
-}
+    
+    resultado.innerHTML = `Tienes ${probabilidad}% de probabilidades de tener COVID`;
 
-sintomas.dolorDeCabeza = convertirBool(prompt('tienes dolor de cabeza? si/no').toUpperCase()) 
-sintomas.dificultadRespirar = convertirBool(prompt('tienes dificultad para respirar? si/no').toUpperCase())
-sintomas.dolorDeCuerpo = convertirBool(prompt('tienes dolor de cuerpo? si/no').toUpperCase())
-sintomas.todasLasVacunas = convertirBool(prompt('tienes todas las vacunas aplicadas? si/no').toUpperCase())
-sintomas.Temperatura = Number(prompt('Cual es tu temperatura'))
-
-if (sintomas.dolorDeCabeza && sintomas.dificultadRespirar && sintomas.Temperatura >= 37 && !sintomas.todasLasVacunas){
-    alert(`Tienes 70% de probabilidades de tener COVID`);
-} else if (sintomas.dolorDeCabeza && sintomas.dificultadRespirar && sintomas.Temperatura >= 37 && sintomas.todasLasVacunas) {
-    alert(`Tienes 40% de probabilidades de tener COVID`);
-} else if (sintomas.dolorDeCabeza && sintomas.dificultadRespirar && sintomas.Temperatura >= 37 && sintomas.dolorDeCuerpo) {
-    alert(`Tienes 100% de probabilidades de tener COVID`);
-}
-
+})

@@ -5,12 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 
     <title>Document</title>
 </head>
 <body>
     
+    <form id="frmCaptura">
+
+        <h2 id="sintomas">Sintomas</h2>
+
+        <div class="checkboxes" id="dolorCabeza">
+            <span>Dolor de cabeza</span>
+            <input type="checkbox" id="rbtnDolorCabeza">
+        </div>
+
+        <div class="checkboxes" id="dificultadRespirar">
+            <span>Dificultad para respirar</span>
+            <input type="checkbox" id="rbtnDificultadRespirar" name="dificultadRespirar">
+        </div>
+
+        <div class="checkboxes" id="dolorCuerpo">
+            <span>Dolor de cuerpo</span>
+            <input type="checkbox" id="rbtnDolorCuerpo" name="dolorCuerpo">
+        </div>
+
+        <div class="checkboxes" id="vacunasAplicadas">
+            <span>Tengo todas las vacunas aplicadas</span>
+            <input type="checkbox" id="rbtnVacunasAplicadas" name="vacunasAplicadas">
+        </div>
+
+        <div class="checkboxes" id="temperatura">
+            <span>Temperatura</span>
+            <input type="text"  id="tbTemperatura">
+        </div>
+
+        <button type="submit" id="btnEvaluar">Evaluar condicion</button>
+
+        <span id="resultado"></span>
+
+    </form>
+
     <script src="./script.js" ></script>
 </body>
 </html>
