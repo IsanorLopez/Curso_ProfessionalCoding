@@ -12,7 +12,27 @@
 
     <title>Cajero</title>
 </head>
+
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+
+    <div class="text-center">
+        <p id="titulo" class="fs-1 fw-bold">Banco de mexico</p>
+    </div>
+
+    <div class="col-md-3 text-end">
+        <button id="btnLogOut" type="button" class="btn btn-dark hide">
+            log-out
+        </button>
+    </div>
+
+</header>
+
 <body>
+
+    <div id="contenedorAlerta">
+        <div id="alert" class="alert alert-danger hide" role="alert">
+        </div>
+    </div>
 
     <div id="Login" class="show container col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row align-items-center g-lg-5 py-5">
@@ -32,6 +52,8 @@
                         </select>
                         
                         <label for="cbCuentas">Cuenta</label>
+
+                        <div id="errorCuenta" class="form-text hide error">Selecciona una cuenta</div>
                     </div>
 
                     <div class="form-floating mb-3">
@@ -82,9 +104,7 @@
                         <button class="w-100 btn btn-lg btn-danger" id="btnDisponer">Disponer</button>
                     </div>
 
-                    
                 </form>
-            
             </div>
         </div>
     </div>

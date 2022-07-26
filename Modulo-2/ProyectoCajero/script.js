@@ -15,12 +15,33 @@ let tbPassword    = document.getElementById('tbPassword');
 
 let errorUser     = document.getElementById('errorUser');
 let errorPassword = document.getElementById('errorPassword');
+let errorCuenta   = document.getElementById('errorCuenta');
 
 let tbSaldo       = document.getElementById('tbSaldo');
 let tbMonto       = document.getElementById('tbMonto');
 
 let btnDepositar  = document.getElementById('btnDepositar');
 let btnDisponer   = document.getElementById('btnDisponer');
+let btnLogOut     = document.getElementById("btnLogOut");
+
+let alert         = document.getElementById("alert");
+
+function fLimpiarLogin () {
+    cmbCuenta.value  = "";
+    tbUser.value     = "";
+    tbPassword.value = "";
+}
+
+function fValidarRetiro() {
+    
+    let saldoRestante = Number(tbSaldo.value) - (Number(tbMonto.value));
+    
+    if ( saldoRestante < 10) {
+        return false
+    } else {
+        return true;
+    } 
+}
 
 cmbCuenta.addEventListener("change", function() {
 
@@ -51,8 +72,29 @@ cmbCuenta.addEventListener("change", function() {
 });
 
 const showErrors = (error) => {
+    if (error === 'datos') {
+        alert.classList.remove('hide');
+        alert.innerHTML = '<h4 class="alert-heading">Faltan datos</h4> <p>Tanto usuario como contrase&ntilde;a son obligatorios</p>'
+        
+        setTimeout(() => {
+            alert.classList.add('hide');
+        }, 3000);
     
-    if (error === 'user') {
+    } else if (error === 'cuenta') {
+        errorCuenta.classList.remove('hide');
+        errorCuenta.classList.add('show');
+        
+        cmbCuenta.classList.add('is-invalid');
+
+        setTimeout(() => {
+            errorCuenta.classList.remove('show');
+            errorCuenta.classList.add('hide');
+
+            cmbCuenta.classList.remove('is-invalid');
+        }, 3000);
+
+    }
+    else if (error === 'user') {
         errorUser.classList.remove('hide');
         errorUser.classList.add('show');
         
@@ -78,25 +120,44 @@ const showErrors = (error) => {
             tbPassword.classList.remove('is-invalid');
         }, 3000);
 
+    } else if (error === 'depositoMayor') {
+        alert.classList.remove('hide');
+        alert.innerHTML = '<h4 class="alert-heading">Deposito mayor al permitido</h4> <p>No puede depositar mas de dos mil pesos</p>'
+        
+        setTimeout(() => {
+            alert.classList.add('hide');
+        }, 3000);
+
+    } else if (error ==='retiroMayor') {
+        alert.classList.remove('hide');
+        alert.innerHTML = '<h4 class="alert-heading">Retiro mayor al permitido</h4> <p>Tu cuenta al menos debe de tener 10 pesos</p>'
+        
+        setTimeout(() => {
+            alert.classList.add('hide');
+        }, 3000);
     }
 
 }
 
 const validarLogin = (user , password) => {
-    
-    if (user !== usuario) {
+    if (cmbCuenta.value === '') {
+        showErrors('cuenta')
+    }else if (user == '' || password == '') {
+        showErrors('datos')
+    } else if (user !== usuario) {
         showErrors('user');
     
     } else if( password !== contrasena) {
         showErrors('password');
-    }
-    else {
+    } else {
 
         Login.classList.remove('show');
         Login.classList.add('hide');
 
         Cajero.classList.remove('hide');
         Cajero.classList.add('show');
+
+        btnLogOut.classList.remove('hide');
 
         tbSaldo.value = `${sld}`;
         tbMonto.value = '';
@@ -114,37 +175,45 @@ btnDepositar.addEventListener('click', (evento) => {
     
     let nvoMonto = 0;
 
-    if (tbMonto.value != '' && tbMonto.value > 0) {
+    if (tbMonto.value != '' && Number(tbMonto.value) > 0) {
         
-        switch (cmbCuenta.value) {
-            case 'c1':
-            
-                nvoMonto = Number(cuentas.c1.saldo) + Number(tbMonto.value);
+        if (Number(tbMonto.value) > 2000) {
+           
+            showErrors('depositoMayor');
+            tbMonto.value = '';
 
-                cuentas.c1.saldo = nvoMonto;
+        } else {
 
-                break;
-            
-            case 'c2':
-            
-                nvoMonto = Number(cuentas.c2.saldo) + Number(tbMonto.value);
+            switch (cmbCuenta.value) {
+                case 'c1':
+                
+                    nvoMonto = Number(cuentas.c1.saldo) + Number(tbMonto.value);
+    
+                    cuentas.c1.saldo = nvoMonto;
+    
+                    break;
+                
+                case 'c2':
+                
+                    nvoMonto = Number(cuentas.c2.saldo) + Number(tbMonto.value);
+    
+                    cuentas.c2.saldo = nvoMonto;
+    
+                    break;
+                
+                case 'c3':
+                
+                    nvoMonto = Number(cuentas.c3.saldo) + Number(tbMonto.value);
+    
+                    cuentas.c3.saldo = nvoMonto;
+    
+                    break;
+            }
+    
+            tbSaldo.value = `${nvoMonto}`;
+            tbMonto.value = '';
 
-                cuentas.c2.saldo = nvoMonto;
-
-                break;
-            
-            case 'c3':
-            
-                nvoMonto = Number(cuentas.c3.saldo) + Number(tbMonto.value);
-
-                cuentas.c3.saldo = nvoMonto;
-
-                break;
         }
-
-        tbSaldo.value = `${nvoMonto}`;
-        tbMonto.value = '';
-
     }
 
 })
@@ -172,6 +241,11 @@ btnDisponer.addEventListener('click', (evento) => {
                 tbMonto.classList.remove('is-invalid');
             }, 3000);
 
+        }
+        else if (!fValidarRetiro()) {
+
+            showErrors('retiroMayor');
+            tbMonto.value = '';
         }
         else {
 
@@ -206,4 +280,16 @@ btnDisponer.addEventListener('click', (evento) => {
         }
     }
 
+});
+
+btnLogOut.addEventListener("click", function() {
+    Login.classList.remove('hide');
+    Login.classList.add('show');
+
+    Cajero.classList.remove('show');
+    Cajero.classList.add('hide');
+
+    btnLogOut.classList.add('hide');
+
+    fLimpiarLogin();
 });
