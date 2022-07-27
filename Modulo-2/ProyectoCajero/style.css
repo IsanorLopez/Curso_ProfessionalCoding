@@ -2,7 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-image: url("./img/fondo.png"); */
+}
+
+body{
+    background-image: url("./img/fondo.jpg");
 }
 
 #btnLogOut {
@@ -22,6 +25,10 @@
     flex-direction: row;
     justify-content: end;
     padding: 15px;
+}
+
+#headerBar {
+    background-color: white;
 }
 
 .hide {

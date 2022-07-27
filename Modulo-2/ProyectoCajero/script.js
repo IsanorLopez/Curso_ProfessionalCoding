@@ -69,6 +69,9 @@ cmbCuenta.addEventListener("change", function() {
             break;
     }
 
+    tbUser.value = '';
+    tbPassword.value = '';
+
 });
 
 const showErrors = (error) => {
