@@ -1,39 +1,36 @@
-const cuentas = {
-    c1 : { saldo: 357 },
-    c2 : { saldo: 741 },
-    c3 : { saldo: 125 }
-}
-
 let sld = 0;
 
 let cuenta = localStorage.getItem("cuenta");
 
 let Cajero = document.getElementById("Cajero");
 
-let tbSaldo       = document.getElementById('tbSaldo');
-let tbMonto       = document.getElementById('tbMonto');
+let tbSaldo        = document.getElementById('tbSaldo');
+let tbMonto        = document.getElementById('tbMonto');
 
-let btnDepositar  = document.getElementById('btnDepositar');
-let btnDisponer   = document.getElementById('btnDisponer');
-let btnLogOut     = document.getElementById("btnLogOut");
+let btnDepositar   = document.getElementById('btnDepositar');
+let btnDisponer    = document.getElementById('btnDisponer');
+let btnLogOut      = document.getElementById("btnLogOut");
 
-let alert         = document.getElementById("alert");
+let alert          = document.getElementById("alert");
+
+let errorMonto     = document.getElementById("errorMonto");
+let errorNegativos = document.getElementById("errorNegativos");
 
 function fAsignarSaldo() {
     switch (cuenta) {
         case 'c1':
 
-            sld         = localStorage.getItem("sc1") ? localStorage.getItem("sc1") : cuentas.c1.saldo;
+            sld         = localStorage.getItem("sc1") ? Number(localStorage.getItem("sc1")) : 0
     
             break;
         case 'c2':
     
-            sld         = localStorage.getItem("sc2") ? localStorage.getItem("sc2") : cuentas.c1.saldo;
+            sld         = localStorage.getItem("sc2") ? Number(localStorage.getItem("sc2")) : 0
     
             break;
         case 'c3':
     
-            sld         = localStorage.getItem("sc3") ? localStorage.getItem("sc3") : cuentas.c1.saldo;
+            sld         = localStorage.getItem("sc3") ? Number(localStorage.getItem("sc3")) : 0
     
             break;
     }
@@ -76,10 +73,31 @@ const showErrors = (error) => {
 
 }
 
-btnDepositar.addEventListener('click', (evento) => {
-    evento.preventDefault();
+function fGuardarNuevoSaldo(nuevoSaldo){
     
+    let nombre = 's' + cuenta;
+    localStorage.setItem(nombre, nuevoSaldo);
+
+}
+
+function fMostrarErrorNegativo() {
+    tbMonto.value = '';
+
+    Number(tbMonto.value)
+    errorNegativos.classList.remove('hide');
+    errorNegativos.classList.add('show');
+
+    setTimeout(() => {
+        errorNegativos.classList.remove('show');
+        errorNegativos.classList.add('hide');
+
+        tbMonto.classList.remove('is-invalid');
+    }, 3000);
+}
+
+function fDisponer() {
     let nvoMonto = 0;
+    let saldoActual = 0;
 
     if (tbMonto.value != '' && Number(tbMonto.value) > 0) {
         
@@ -93,25 +111,25 @@ btnDepositar.addEventListener('click', (evento) => {
             switch (cuenta) {
                 case 'c1':
                 
-                    nvoMonto = Number(cuentas.c1.saldo) + Number(tbMonto.value);
-    
-                    cuentas.c1.saldo = nvoMonto;
-    
+                    saldoActual = localStorage.getItem("sc1") ? Number(localStorage.getItem("sc1")) : 0;
+
+                    nvoMonto = saldoActual + Number(tbMonto.value);
+                    
                     break;
                 
                 case 'c2':
                 
-                    nvoMonto = Number(cuentas.c2.saldo) + Number(tbMonto.value);
-    
-                    cuentas.c2.saldo = nvoMonto;
+                    saldoActual = localStorage.getItem("sc2") ? Number(localStorage.getItem("sc2")) : 0;
+
+                    nvoMonto = saldoActual + Number(tbMonto.value);
     
                     break;
                 
                 case 'c3':
                 
-                    nvoMonto = Number(cuentas.c3.saldo) + Number(tbMonto.value);
-    
-                    cuentas.c3.saldo = nvoMonto;
+                    saldoActual = localStorage.getItem("sc3") ? Number(localStorage.getItem("sc3")) : 0;
+
+                    nvoMonto = saldoActual + Number(tbMonto.value);
     
                     break;
             }
@@ -123,14 +141,14 @@ btnDepositar.addEventListener('click', (evento) => {
 
         }
     }
+    else if (Number(tbMonto.value) < 0) {
+        fMostrarErrorNegativo();
+    }
+}
 
-})
-
-
-btnDisponer.addEventListener('click', (evento) => {
-    evento.preventDefault();
-    
+function fDepositar() {
     let nvoMonto = 0;
+    let saldoActual = 0;
 
     if (tbMonto.value != '' && tbMonto.value > 0) {
         
@@ -161,25 +179,26 @@ btnDisponer.addEventListener('click', (evento) => {
             switch (cuenta) {
                 case 'c1':
                 
-                    nvoMonto = Number(cuentas.c1.saldo) - Number(tbMonto.value);
-    
-                    cuentas.c1.saldo = nvoMonto;
+                    saldoActual = localStorage.getItem("sc1") ? Number(localStorage.getItem("sc1")) : 0;
+                    
+                    nvoMonto = saldoActual - Number(tbMonto.value);
 
                     break;
                 
                 case 'c2':
                 
-                    nvoMonto = Number(cuentas.c2.saldo) - Number(tbMonto.value);
+                    saldoActual = localStorage.getItem("sc2") ? Number(localStorage.getItem("sc2")) : 0;
     
-                    cuentas.c2.saldo = nvoMonto;
+                    nvoMonto = saldoActual - Number(tbMonto.value);
     
                     break;
                 
                 case 'c3':
                 
-                    nvoMonto = Number(cuentas.c3.saldo) - Number(tbMonto.value);
+                    saldoActual = localStorage.getItem("sc3") ? Number(localStorage.getItem("sc3")) : 0;
+                    
     
-                    cuentas.c3.saldo = nvoMonto;
+                    nvoMonto = saldoActual - Number(tbMonto.value);
     
                     break;
             }
@@ -189,16 +208,24 @@ btnDisponer.addEventListener('click', (evento) => {
             tbSaldo.value = `${nvoMonto}`;
             tbMonto.value = '';
         }
+    } else if (Number(tbMonto.value) < 0) {
+        fMostrarErrorNegativo();
     }
+}
+
+btnDepositar.addEventListener('click', (evento) => {
+    evento.preventDefault();
+
+    fDisponer();
+
+})
+
+btnDisponer.addEventListener('click', (evento) => {
+    evento.preventDefault();
+    
+    fDepositar();
 
 });
-
-function fGuardarNuevoSaldo(nuevoSaldo){
-    
-    let nombre = 's' + cuenta;
-    localStorage.setItem(nombre, nuevoSaldo);
-
-}
 
 btnLogOut.addEventListener("click", function() {
     window.location.href = "./login.html"

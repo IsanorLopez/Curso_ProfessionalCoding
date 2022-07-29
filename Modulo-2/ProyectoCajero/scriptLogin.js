@@ -109,11 +109,12 @@ const showErrors = (error) => {
 }
 
 const validarLogin = (user , password) => {
+    
     if (cmbCuenta.value === '') {
         showErrors('cuenta')
-    }else if (user == '' || password == '') {
+    }else if (user.trim() == '' || password == '') {
         showErrors('datos')
-    } else if (user !== usuario) {
+    } else if (user.trim() !== usuario) {
         showErrors('user');
     
     } else if( password !== contrasena) {

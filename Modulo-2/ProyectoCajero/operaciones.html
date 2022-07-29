@@ -52,9 +52,10 @@
                     
                     <div class="form-floating mb-3">
                         
-                        <input type="number" class="form-control" id="tbMonto" placeholder="Password">
+                        <input type="number" min="0" class="form-control" id="tbMonto" placeholder="Password">
                         <label for="tbMonto">Monto$</label>
                         
+                        <div id="errorNegativos" class="form-text hide error">No se permiten capturar negativos</div>
                         <div id="errorMonto" class="form-text hide error">No puedes disponer mas de lo que tienes</div>
                     </div>
                     
