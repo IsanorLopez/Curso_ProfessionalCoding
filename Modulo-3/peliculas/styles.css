@@ -8,7 +8,7 @@
 
 #resultados {
     width: 100%;
-    background-color: brown;
+    background-color: gray;
 }
 
 .icono {
@@ -19,8 +19,14 @@
 
 div img {
    height: 500px;
+   width: 100%;
 }
 
 #titulo {
     text-overflow: ellipsis !important;
+}
+
+.centrado {
+    width: 100%;
+    text-align: center;
 }
