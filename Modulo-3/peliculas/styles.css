@@ -8,13 +8,23 @@
 
 #resultados {
     width: 100%;
-    background-color: gray;
+    background-color: whitesmoke;
+}
+
+#generos {
+    width: 100%;
+    background-color: whitesmoke;
 }
 
 .icono {
     height: 20px;
     width: 15px;
     padding-bottom: 5px;
+}
+
+.img {
+    height: 15rem;
+    width: 15rem;
 }
 
 div img {
