@@ -1,6 +1,10 @@
 let peliculas;
 let carta;
 
+const tituloModal    = document.querySelector("#tituloModal");
+const contenidoModal = document.querySelector("#contenidoModal"); 
+const imagenModal    = document.querySelector("#imagenModal"); 
+
 const obtenerDatos = () => {
     fetch("https://api.themoviedb.org/3/movie/popular?api_key=a02e9d58af30f75ad51124ced2a1c3dd&language=es-ES&page=1&region=MX")
     .then(response => response.json()).then((data) => {
@@ -45,16 +49,33 @@ const dibujar = (peliculas) => {
                     </div>
                 </div>
                 <h5 class="card-title titulo">${pelicula.title}</h5>
-                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary centrado">Detalles</a>
+                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary centrado" id="${pelicula.id}">Detalles</a>
             </div>               
         `;
 
         carta.innerHTML = card;
         document.querySelector("#resultados").append(carta);
-
     }   
 }
+
+const mostrarDetalles = (e) => {
+    let id = e.target.getAttribute("id");
+
+    if (id !== null) {
+
+        tituloModal.innerText = "";
+        contenidoModal.innerText = "";
+        
+        const {title, overview, backdrop_path} = peliculas.find(p => p.id == id);
+
+        tituloModal.innerText = title;
+        contenidoModal.innerText = overview;
+        imagenModal.setAttribute("src", `https://image.tmdb.org/t/p/original/${backdrop_path}`);
+
+    }
+  };
 
 obtenerDatos();
 
 document.querySelector("#tbSearch").addEventListener("keyup", buscar)
+resultados.addEventListener("click", mostrarDetalles);
