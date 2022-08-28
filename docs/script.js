@@ -2,6 +2,8 @@ let peliculas;
 let carta;
 let bandera = false;
 
+localStorage.setItem("idioma", "en-US");
+
 const tituloModal    = document.querySelector("#tituloModal");
 const contenidoModal = document.querySelector("#contenidoModal"); 
 const imagenModal    = document.querySelector("#imagenModal"); 
