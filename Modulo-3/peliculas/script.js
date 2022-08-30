@@ -116,7 +116,7 @@ const renderizarPeliculas = (peliculas) => {
 const mostrarDetalles = (e) => {
     let id = e.target.getAttribute("id");
 
-    if (id !== null) {
+    if (id !== null && id !== 'resultados') {
 
         tituloModal.innerText = "";
         contenidoModal.innerText = "";
